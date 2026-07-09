@@ -1,0 +1,44 @@
+{
+  "name": "mcp-dashboard",
+  "version": "1.0.0",
+  "agent": {
+    "model": "gemini-2.0-flash",
+    "instructions": ".opencode/agent-instructions.md"
+  },
+  "mcpServers": {
+    "ael-mcp": {
+      "command": "node",
+      "args": ["mcp-server.js"],
+      "tools": {
+        "db-reader": {
+          "description": "Read collection data from database. Collections: users (monthly user counts), revenue (monthly revenue)",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "collection": { "type": "string", "enum": ["users", "revenue"] }
+            },
+            "required": ["collection"]
+          }
+        },
+        "calculate": {
+          "description": "Perform arithmetic: add, subtract, multiply, divide",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "operation": { "type": "string", "enum": ["add", "subtract", "multiply", "divide"] },
+              "a": { "type": "number" },
+              "b": { "type": "number" }
+            },
+            "required": ["operation", "a", "b"]
+          }
+        }
+      }
+    }
+  },
+  "skills": {
+    "build-chart": {
+      "description": "Generates a Chart.js chart component",
+      "prompt": "Create a Chart.js {chartType} chart. Labels: {labels}. Data: {data}. Color: #0074FF. Dark theme. Include responsive options."
+    }
+  }
+}

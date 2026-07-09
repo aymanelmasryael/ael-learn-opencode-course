@@ -1,0 +1,17 @@
+{
+  "name": "landing-page-generator",
+  "version": "1.0.0",
+  "agent": {
+    "model": "claude-3-haiku",
+    "instructions": ".opencode/agent-instructions.md"
+  },
+  "slashCommands": {
+    "build-landing": {
+      "description": "Build a landing page for any product",
+      "prompt": "Create a complete landing page for {product} with a {tone} tone. Include: full-viewport hero with gradient overlay, 4-column features grid with icons, 3 testimonial cards, and a CTA section with glow button. Brand primary color: #0074FF. Dark theme. Responsive design."
+    }
+  },
+  "rules": {
+    "directories": [".opencode/rules/"]
+  }
+}

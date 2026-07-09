@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn OpenCode — From Zero to Pro | Ayman Elmasry</title>
+  <meta name="author" content="Ayman Elmasry">
+  <meta name="description" content="Complete OpenCode course from scratch to professional. Agentic coding with MCP, rules, custom agents, and free AI models.">
+  <meta property="og:title" content="Learn OpenCode — From Zero to Pro | Ayman Elmasry">
+  <meta property="og:description" content="Master agentic coding with OpenCode — MCP, rules, custom agents, skills, and free AI models. No paid subscription needed.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/aymanelmasryael/learn-opencode-course/main/cover.svg">
+  <meta property="og:url" content="https://github.com/aymanelmasryael/learn-opencode-course">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Learn OpenCode — From Zero to Pro | Ayman Elmasry">
+  <meta name="twitter:description" content="Master agentic coding with OpenCode — MCP, rules, custom agents, skills, and free AI models.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/aymanelmasryael/learn-opencode-course/main/cover.svg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 226.77 226.77'%3E%3Cpath d='m97.19,48.59v16.2h-32.4v-16.2c0-8.94-7.25-16.2-16.2-16.2s-16.2,7.25-16.2,16.2v16.2H0v-16.2c0-5.68.98-11.13,2.76-16.2C9.44,13.52,27.44,0,48.59,0s39.16,13.52,45.83,32.4c1.79,5.07,2.76,10.52,2.76,16.2Z' fill='%23ffffff'/%3E%3Crect y='97.19' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='64.79' y='97.19' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='64.79' y='129.58' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect y='129.58' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='129.58' y='97.19' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='161.98' y='129.58' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='194.38' y='129.58' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='129.58' y='129.58' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='129.58' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='161.98' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='129.58' y='32.4' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='32.4' y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='64.79' y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='97.19' y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='129.58' y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='161.98' y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3Crect x='194.38' y='194.38' width='32.4' height='32.4' fill='%230074FF'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="noise"></div>
+
+  <nav class="navbar glass" id="navbar">
+    <div class="nav-brand">
+      <svg class="nav-logo-img" viewBox="0 0 226.77 226.77"><path d="m97.19,48.59v16.2h-32.4v-16.2c0-8.94-7.25-16.2-16.2-16.2s-16.2,7.25-16.2,16.2v16.2H0v-16.2c0-5.68.98-11.13,2.76-16.2C9.44,13.52,27.44,0,48.59,0s39.16,13.52,45.83,32.4c1.79,5.07,2.76,10.52,2.76,16.2Z" fill="#ffffff"/><rect y="97.19" width="32.4" height="32.4" fill="#0074FF"/><rect x="64.79" y="97.19" width="32.4" height="32.4" fill="#0074FF"/><rect x="64.79" y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" y="97.19" width="32.4" height="32.4" fill="#0074FF"/><rect x="161.98" y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="194.38" y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" y="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" width="32.4" height="32.4" fill="#0074FF"/><rect x="161.98" width="32.4" height="32.4" fill="#0074FF"/><rect x="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" y="32.4" width="32.4" height="32.4" fill="#0074FF"/><rect y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="32.4" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="64.79" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="97.19" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="129.58" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="161.98" y="194.38" width="32.4" height="32.4" fill="#0074FF"/><rect x="194.38" y="194.38" width="32.4" height="32.4" fill="#0074FF"/></svg>
+      <div class="nav-title">
+        <span class="nav-name">AYMAN ELMASRY</span>
+        <span class="nav-studio">AEL Digital Studio</span>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#overview" class="nav-link active">Overview</a>
+      <a href="#curriculum" class="nav-link">Curriculum</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#playground" class="nav-link">Playground</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section id="overview" class="section active">
+    <div class="section-bg"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="container hero">
+      <div class="hero-badge glass"><span class="badge-dot"></span> v1.0 — AEL Studio</div>
+      <h1 class="hero-title"><span class="text-gradient">Learn OpenCode</span><span class="hero-sub">From Zero to Professional</span></h1>
+      <p class="hero-desc">Master agentic coding with <strong>OpenCode</strong> — MCP, rules, custom agents, agent skills, and free AI models. No paid subscription needed.</p>
+      <div class="hero-cover">
+        <img src="cover.svg" alt="Learn OpenCode Course" class="hero-cover-img">
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card glass"><span class="stat-icon">📦</span><span class="stat-value">6</span><span class="stat-label">Modules</span></div>
+        <div class="stat-card glass"><span class="stat-icon">📖</span><span class="stat-value">17+</span><span class="stat-label">Lessons</span></div>
+        <div class="stat-card glass"><span class="stat-icon">🆓</span><span class="stat-value">100%</span><span class="stat-label">Free Models</span></div>
+        <div class="stat-card glass"><span class="stat-icon">🚀</span><span class="stat-value">5</span><span class="stat-label">Projects</span></div>
+      </div>
+      <a href="#curriculum" class="btn-primary">Start Learning →</a>
+    </div>
+  </section>
+
+  <section id="curriculum" class="section">
+    <div class="section-bg"><div class="orb orb-1" style="top:-150px;right:-50px"></div><div class="orb orb-2" style="bottom:-100px;left:-50px"></div></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge glass"><span class="badge-dot"></span> Full Curriculum</div>
+        <h2>Algorithmic Course Structure</h2>
+        <p>6 modules · 17+ algorithmic lessons · 5 hands-on projects</p>
+      </div>
+      <div class="modules-grid" id="modulesGrid"></div>
+      <div class="lesson-detail" id="lessonDetail"></div>
+
+      <!-- Timeline -->
+      <div id="timeline" style="margin:50px 0"></div>
+
+      <!-- MCP Diagram -->
+      <h3 style="font-size:28px;font-weight:bold;text-align:center;margin:60px 0 20px;background:linear-gradient(135deg,#eef2ff,#9ab3e6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">How MCP Works</h3>
+      <div class="glass" style="padding:28px;margin-bottom:40px;">
+        <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;text-align:center;">MCP (Model Context Protocol) connects OpenCode to external tools like databases, APIs, and the file system.</p>
+        <div class="mcp-diagram">
+          <div class="mcp-node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0074FF" stroke-width="2"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg><span>OpenCode</span><span class="mcp-label">Agent</span></div>
+          <div class="mcp-arrow">⟷</div>
+          <div class="mcp-node highlight"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ffcc" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg><span>MCP Server</span><span class="mcp-label">Protocol Layer</span></div>
+          <div class="mcp-arrow">⟷</div>
+          <div class="mcp-node-group">
+            <div class="mcp-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0074FF" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg><span>Database</span></div>
+            <div class="mcp-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0074FF" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg><span>APIs</span></div>
+            <div class="mcp-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0074FF" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg><span>File System</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Free Models -->
+      <h3 style="font-size:28px;font-weight:bold;text-align:center;margin:40px 0 20px;background:linear-gradient(135deg,#eef2ff,#9ab3e6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Supported Free AI Models</h3>
+      <div class="models-grid">
+        <div class="glass model-card"><div class="model-icon">🤖</div><strong>Claude 3 Haiku</strong><span class="model-meta">Anthropic · Fast & Light</span></div>
+        <div class="glass model-card"><div class="model-icon">🧠</div><strong>Gemini 2.0 Flash</strong><span class="model-meta">Google · Free Tier</span></div>
+        <div class="glass model-card"><div class="model-icon">🌊</div><strong>DeepSeek V3</strong><span class="model-meta">Open Source · Powerful</span></div>
+        <div class="glass model-card"><div class="model-icon">📡</div><strong>LLaMA 3</strong><span class="model-meta">Meta · Open Weights</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-bg"><div class="orb orb-1" style="top:-100px;right:50px"></div><div class="orb orb-2" style="bottom:-120px;left:50px"></div></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge glass"><span class="badge-dot"></span> Hands-On</div>
+        <h2>5 Practical Projects</h2>
+        <p>From "Hello World" to a full Next.js app with custom agents</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+      <div class="project-detail" id="projectDetail"></div>
+    </div>
+  </section>
+
+  <section id="playground" class="section">
+    <div class="section-bg"><div class="orb orb-1" style="top:-100px;right:0"></div></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge glass"><span class="badge-dot"></span> Interactive Lab</div>
+        <h2>Code Playground</h2>
+        <p>Try OpenCode commands, rules, and MCP configs live</p>
+      </div>
+      <div class="glass" style="padding:24px;">
+        <div class="playground-tabs">
+          <button class="playground-tab active" data-pt="opencode">OpenCode CLI</button>
+          <button class="playground-tab" data-pt="rules">Rules</button>
+          <button class="playground-tab" data-pt="mcp">MCP Config</button>
+        </div>
+        <div class="playground-editor">
+          <textarea id="codeEditor" spellcheck="false" placeholder="# Example: Create a new project
+create-project nextjs-blog
+
+# Add project rules
+add-rule &quot;Use Next.js 14 with App Router&quot;
+
+# Run agent to build a page
+agent-run &quot;Create a landing page with Hero Section&quot;"></textarea>
+          <div class="playground-output" id="playgroundOutput"><span class="output-placeholder">▶ Run a command to see the result...</span></div>
+        </div>
+        <div class="playground-actions">
+          <button class="btn-primary" id="runBtn">▶ Run</button>
+          <button class="btn-secondary" id="clearBtn">Clear</button>
+          <button class="btn-secondary" id="resetBtn">Reset</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-bg"><div class="orb orb-1" style="top:-200px;left:-100px"></div><div class="orb orb-2" style="bottom:-150px;right:-100px"></div></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge glass"><span class="badge-dot"></span> AEL Digital Studio</div>
+        <h2>About This Course</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass"><h3>Author</h3><p><strong>Ayman Elmasry</strong><br>AEL Digital Studio</p><p class="about-version">Learn OpenCode v1.0 — 2026</p><p class="about-license">MIT License — Free for personal and commercial use</p></div>
+        <div class="about-card glass"><h3>What You'll Learn</h3><ul class="about-list"><li>OpenCode installation and basic commands</li><li>Agent Instructions & Custom Slash Commands</li><li>Context window management</li><li>Agent Skills for repeatable workflows</li><li>Project Rules to guide AI behavior</li><li>MCP servers & tool integration</li><li>Custom agents and sub-agents</li><li>Building real apps with free AI models</li></ul></div>
+        <div class="about-card glass"><h3>Prerequisites</h3><ul class="about-list"><li>Basic programming knowledge (any language)</li><li>Node.js installed (v18+)</li><li>A terminal / command line</li><li>No paid AI subscription needed</li></ul></div>
+        <div class="about-card glass"><h3>Why OpenCode?</h3><p>OpenCode is one of the most exciting tools for developers who want agentic coding without expensive subscriptions. Free models need more structure — that's exactly what this course teaches.</p></div>
+      </div>
+      <div class="about-footer glass"><p>© 2026 Ayman Elmasry — AEL Digital Studio. All rights reserved.</p><p class="about-tagline">Built with ❤️ and vanilla JavaScript</p></div>
+    </div>
+  </section>
+
+  <style>
+    :root{--primary:#0074FF;--primary-dark:#0052b3;--primary-light:#4d9bff;--primary-glow:rgba(0,116,255,.25);--gold:#ffd700;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;--bg-deep:#000;--bg-card:rgba(5,12,24,.7);--bg-surface:rgba(1,5,14,.7);--text-primary:#eef2ff;--text-secondary:#9ab3e6;--text-muted:#64748b;--border-color:rgba(0,116,255,.25);--border-glow:rgba(0,116,255,.4);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;--font-mono:'SF Mono','Fira Code','Cascadia Code','JetBrains Mono',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:var(--font-sans);background:var(--bg-deep);color:var(--text-primary);min-height:100vh;overflow-x:hidden;line-height:1.6}
+    ::selection{background:var(--primary);color:#fff}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border-color);border-radius:3px}
+    .noise{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--primary-glow),transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:opacity .3s;opacity:0}
+    .glass{background:var(--bg-card);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--border-color)}
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.5}
+    .orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,116,255,.12),transparent 70%);top:-200px;right:-100px}
+    .orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(0,116,255,.08),transparent 70%);bottom:-150px;left:-100px}
+    .navbar{position:fixed;top:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-radius:60px;z-index:1000;width:calc(100% - 32px);max-width:1100px}
+    .navbar.scrolled{background:rgba(5,12,24,.85)}.nav-brand{display:flex;align-items:center;gap:12px}.nav-logo-img{height:36px;width:auto}.nav-title{display:flex;flex-direction:column}
+    .nav-name{font-family:var(--font-mono);font-size:11px;font-weight:bold;letter-spacing:.5px;color:var(--text-primary)}.nav-studio{font-family:var(--font-mono);font-size:9px;color:var(--text-secondary)}
+    .nav-links{display:flex;gap:4px}.nav-link{padding:6px 14px;border-radius:20px;text-decoration:none;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);transition:all .2s}
+    .nav-link:hover,.nav-link.active{color:var(--text-primary);background:rgba(0,116,255,.1)}.nav-link.active{color:var(--primary)}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:4px}.nav-toggle span{width:20px;height:2px;background:var(--text-primary);border-radius:2px;transition:.3s}
+    .section{display:none;min-height:100vh;padding:100px 20px 60px;position:relative;overflow:hidden}.section.active{display:flex;align-items:center;justify-content:center}.section-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}.container{width:100%;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .section-header{text-align:center;margin-bottom:40px}.section-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:20px;font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);margin-bottom:16px}
+    .section-header h2{font-size:36px;font-weight:bold;background:linear-gradient(135deg,#eef2ff,#9ab3e6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .section-header p{color:var(--text-muted);font-size:14px;margin-top:8px}
+    .section-header h3{font-size:28px;font-weight:bold;background:linear-gradient(135deg,#eef2ff,#9ab3e6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:20px}
+    .hero{text-align:center;padding-top:40px}.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:30px;margin-bottom:24px;font-family:var(--font-mono);font-size:12px;color:var(--text-secondary)}
+    .badge-dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse-dot 2s infinite;display:inline-block}
+    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero-title{font-size:56px;font-weight:bold;line-height:1.1;margin-bottom:16px}
+    .text-gradient{background:linear-gradient(135deg,#0074FF,#4d9bff,#0074FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% auto;animation:gradient-shift 4s ease infinite}
+    @keyframes gradient-shift{0%,100%{background-position:0% center}50%{background-position:100% center}}
+    .hero-sub{display:block;font-size:28px;color:var(--text-secondary);margin-top:4px}.hero-desc{max-width:600px;margin:0 auto 32px;color:var(--text-secondary);font-size:15px;line-height:1.7}.hero-desc strong{color:var(--text-primary)}
+    .hero-cover{text-align:center;margin:0 auto 32px;max-width:720px;padding:0 20px}.hero-cover-img{width:100%;height:auto;border-radius:var(--radius-lg);border:1px solid var(--border-color);box-shadow:0 20px 60px rgba(0,0,0,0.5);display:block;transition:transform .3s,box-shadow .3s}.hero-cover-img:hover{transform:translateY(-4px);box-shadow:0 30px 80px rgba(0,116,255,0.15);border-color:var(--primary)}
+    .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;max-width:800px;margin-inline:auto}
+    .stat-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 12px;border-radius:var(--radius-md);text-align:center;transition:transform .2s,border-color .2s}
+    .stat-card:hover{transform:translateY(-2px);border-color:var(--primary)}.stat-icon{font-size:24px}.stat-value{font-family:var(--font-mono);font-size:28px;font-weight:bold}.stat-label{font-size:11px;color:var(--text-muted)}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:40px;border:none;color:#fff;font-family:var(--font-mono);font-size:13px;cursor:pointer;transition:all .2s;text-decoration:none;background:var(--primary)}
+    .btn-primary:hover{box-shadow:0 0 30px var(--primary-glow);transform:translateY(-1px)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:40px;border:1px solid var(--border-color);color:var(--text-secondary);font-family:var(--font-mono);font-size:12px;cursor:pointer;transition:all .2s;text-decoration:none;background:transparent}
+    .btn-secondary:hover{border-color:var(--primary);color:var(--text-primary)}
+    .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:20px}
+    .module-card{cursor:pointer;transition:all .3s;border-radius:var(--radius-lg);padding:24px;background:var(--bg-card);backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--border-color)}
+    .module-card:hover{border-color:var(--primary);transform:translateY(-2px)}.module-card.active{border-color:var(--success);box-shadow:0 0 30px rgba(16,185,129,.08)}
+    .module-num{font-family:var(--font-mono);font-size:11px;color:var(--primary);margin-bottom:8px}.module-card h3{font-size:16px;margin-bottom:8px}.module-card p{font-size:13px;color:var(--text-secondary);line-height:1.6}
+    .module-lessons{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.module-lessons span{background:rgba(0,116,255,.08);color:var(--text-secondary);font-size:10px;padding:3px 10px;border-radius:10px;border:1px solid rgba(0,116,255,.1);font-family:var(--font-mono)}
+    .lesson-detail{display:none;margin-bottom:30px}.lesson-detail.open{display:block}.lesson-content{background:rgba(0,0,0,.3);border-radius:var(--radius-lg);padding:28px;border:1px solid rgba(0,255,204,.08)}
+    .lesson-content h4{color:var(--text-primary);font-size:15px;margin-bottom:16px}.lesson-content .sec{margin-bottom:20px}.lesson-content .sec h5{color:#fff;font-size:14px;margin-bottom:6px}.lesson-content .sec p{color:var(--text-secondary);font-size:13px;line-height:1.7}
+    .lesson-content pre{background:rgba(0,0,0,.4);border:1px solid var(--border-color);border-radius:8px;padding:16px;overflow-x:auto;font-family:var(--font-mono);font-size:12px;color:var(--success);margin:10px 0;direction:ltr;text-align:left}
+    .lesson-content .tip{background:rgba(255,215,0,.06);border-left:3px solid var(--gold);padding:12px 16px;border-radius:8px;margin:12px 0;font-size:13px;color:var(--text-secondary)}.lesson-content .tip strong{color:var(--gold)}
+    .mcp-diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin:20px 0;padding:16px}
+    .mcp-node{background:rgba(0,116,255,.06);border:1px solid var(--border-color);border-radius:12px;padding:14px 18px;text-align:center;min-width:90px;display:flex;flex-direction:column;align-items:center;gap:4px}.mcp-node span{font-family:var(--font-mono);font-size:11px;color:var(--text-primary)}.mcp-node .mcp-label{font-size:9px;color:var(--text-muted)}.mcp-node.highlight{border-color:rgba(0,255,204,.3);background:rgba(0,255,204,.04)}.mcp-node.highlight span{color:var(--success)}.mcp-arrow{color:var(--text-muted);font-family:var(--font-mono);font-size:18px}.mcp-node-group{display:flex;gap:8px;flex-wrap:wrap}
+    .models-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:50px}.model-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px 16px;border-radius:var(--radius-lg);text-align:center}.model-icon{font-size:32px}.model-card strong{font-size:14px}.model-meta{font-family:var(--font-mono);font-size:10px;color:var(--text-muted)}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:30px}
+    .project-card{cursor:pointer;transition:all .3s;border-radius:var(--radius-lg);padding:24px;background:var(--bg-card);backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--border-color);position:relative;overflow:hidden}
+    .project-card:hover{border-color:var(--primary);transform:translateY(-2px)}.project-card.active{border-color:var(--gold);box-shadow:0 0 30px rgba(255,215,0,.06)}
+    .project-card .pnum{font-family:var(--font-mono);font-size:10px;color:var(--gold);margin-bottom:4px}.project-card h3{font-size:16px;margin-bottom:6px}
+    .project-card p{font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:10px}
+    .project-card .ptags{display:flex;flex-wrap:wrap;gap:4px}.project-card .ptags span{background:rgba(0,116,255,.06);border:1px solid rgba(0,116,255,.1);padding:2px 8px;border-radius:6px;font-family:var(--font-mono);font-size:9px;color:var(--text-muted)}
+    .project-card .picon{font-size:28px;margin-bottom:8px;display:block}
+    .project-card .pdifficulty{position:absolute;top:16px;right:16px;font-size:9px;font-family:var(--font-mono);padding:3px 10px;border-radius:10px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:var(--success)}
+    .project-card .pdifficulty.hard{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.2);color:var(--danger)}
+    .project-card .pdifficulty.medium{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.2);color:var(--warning)}
+    .project-detail{display:none;margin-bottom:30px}.project-detail.open{display:block}
+    .project-content{background:rgba(0,0,0,.3);border-radius:var(--radius-lg);padding:28px;border:1px solid rgba(255,215,0,.08)}
+    .project-content h4{color:var(--text-primary);font-size:16px;margin-bottom:12px}.project-content .sec{margin-bottom:16px}
+    .project-content .sec h5{color:var(--gold);font-size:14px;margin-bottom:6px;font-family:var(--font-mono)}
+    .project-content .sec p{color:var(--text-secondary);font-size:13px;line-height:1.7}.project-content .sec ul{list-style:none;padding:0;margin:8px 0}
+    .project-content .sec ul li{color:var(--text-secondary);font-size:12px;padding:4px 0;padding-left:16px;position:relative}
+    .project-content .sec ul li::before{content:"→";color:var(--primary);position:absolute;left:0}
+    .project-content pre{background:rgba(0,0,0,.4);border:1px solid var(--border-color);border-radius:8px;padding:16px;overflow-x:auto;font-family:var(--font-mono);font-size:12px;color:var(--success);margin:10px 0}
+    .playground-tabs{display:flex;gap:4px;margin-bottom:16px;flex-wrap:wrap}.playground-tab{padding:7px 18px;border-radius:20px;border:1px solid var(--border-color);background:transparent;color:var(--text-muted);font-family:var(--font-mono);font-size:11px;cursor:pointer;transition:all .2s}
+    .playground-tab:hover,.playground-tab.active{color:var(--text-primary);background:rgba(0,116,255,.08);border-color:var(--primary)}
+    .playground-editor{background:#0d1117;border:1px solid var(--border-color);border-radius:var(--radius-md);overflow:hidden}
+    .playground-editor textarea{width:100%;min-height:200px;background:transparent;border:none;padding:20px;color:var(--success);font-family:var(--font-mono);font-size:13px;line-height:1.7;resize:vertical;direction:ltr;text-align:left}
+    .playground-editor textarea:focus{outline:none}.playground-output{border-top:1px solid var(--border-color);padding:16px 20px;min-height:50px;font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);direction:ltr;text-align:left}.playground-output .output-placeholder{color:var(--text-muted)}
+    .playground-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto}.about-card{padding:24px;border-radius:var(--radius-lg)}
+    .about-card h3{font-size:15px;font-weight:bold;margin-bottom:12px;color:var(--text-primary)}.about-card p{font-size:13px;color:var(--text-secondary);line-height:1.7}.about-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+    .about-list li{font-size:13px;color:var(--text-secondary)}.about-list li::before{content:"— ";color:var(--primary)}
+    .about-version{font-family:var(--font-mono);font-size:12px;color:var(--primary);margin-top:8px}.about-license{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-top:4px}
+    .about-footer{text-align:center;padding:20px;border-radius:var(--radius-lg);margin-top:24px;max-width:800px;margin-inline:auto}.about-footer p{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}.about-tagline{color:var(--text-secondary);margin-top:4px}
+    @media(max-width:768px){.nav-links{display:none;position:absolute;top:60px;right:0;flex-direction:column;background:rgba(5,12,24,.95);border-radius:var(--radius-md);padding:12px;border:1px solid var(--border-color);width:200px;gap:2px}.nav-links.open{display:flex}.nav-toggle{display:flex}.hero-title{font-size:36px}.hero-sub{font-size:22px}.hero-stats{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.modules-grid{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}.mcp-node-group{flex-direction:column}.mcp-diagram{flex-direction:column}.mcp-arrow{transform:rotate(90deg)}}
+    @media(max-width:480px){.navbar{padding:8px 14px}.hero-title{font-size:28px}.hero-sub{font-size:18px}.stat-card{padding:14px 8px}.stat-value{font-size:22px}}
+  </style>
+
+  <script>
+    const MODULES = [
+      { id:1, title:'Introduction & Installation', desc:'The algorithmic foundation — install, configure, and run your first agent.', lessons:['Core Concepts','Installation','First Agent Run','Context Window'], icon:'🚀',
+        detail:[
+          {h:'Algorithm: Agentic Coding Pipeline',p:'INPUT(user prompt) → LOAD(rules, instructions) → PROCESS(context + prompt) → GENERATE(code) → REVIEW → OUTPUT(files). Understand this pipeline end-to-end.'},
+          {h:'Installation',p:'npm install -g @opencodeai/cli. Verify with "opencode --version". OpenCode wraps any AI model (Claude, Gemini, DeepSeek) under a unified agent interface.',code:'npm install -g @opencodeai/cli\nopencode --version'},
+          {h:'First Agent Run',p:'Create a directory, run "opencode init", then "opencode run \\"create index.html with Hello World\\"". The agent reads your prompt, applies default rules, and writes output.',code:'mkdir test-project && cd test-project\nopencode init\nopencode run "Create an HTML page with Hello OpenCode in AEL blue #0074FF"'},
+          {h:'Context Window',p:'The context window is the agent\'s working memory. Each conversation turn adds tokens. Free models have smaller limits (32K-128K). Manage context by: 1) Starting fresh sessions per task 2) Avoiding long unrelated discussions 3) Using rules to inject context efficiently'}
+        ]},
+      { id:2, title:'Agent Instructions & Control', desc:'Direct the agent with precision — instructions, parameters, and custom commands.', lessons:['Agent Instructions','Parameters','Slash Commands','Context Engineering'], icon:'🎛️',
+        detail:[
+          {h:'Agent Instructions',p:'Create .opencode/agent-instructions.md. These are prepended to EVERY prompt automatically. Think of them as system prompts — they shape the agent\'s persona and constraints.',code:'# .opencode/agent-instructions.md\nYou are a senior frontend developer.\n- Use semantic HTML5\n- Use CSS custom properties\n- Must support dark mode\n- Responsive mobile-first design'},
+          {h:'Parameters in Prompts',p:'Pass runtime data using parameter syntax: agent-run "Build a {type} page for {product} with {theme} theme". The agent substitutes parameters at generation time.'},
+          {h:'Custom Slash Commands',p:'Define reusable commands in opencode.json. Slash commands are parameterized templates that enforce consistency across generations.',code:'"slashCommands": {\n  "build-page": {\n    "description": "Generate a full page",\n    "prompt": "Create a {type} page for {product}. Include hero, features, CTA. Theme: {theme}"\n  }\n}'},
+          {h:'Context Engineering',p:'Rules > Instructions > Prompt. Priority: Project rules override agent instructions, agent instructions override the prompt. Layer your constraints strategically.'}
+        ]},
+      { id:3, title:'Agent Skills', desc:'Build reusable, parameterized skills that encode domain expertise.', lessons:['Skill Architecture','Creating Skills','Composing Skills','Skill Libraries'], icon:'✨',
+        detail:[
+          {h:'What is a Skill?',p:'A skill is a named, parameterized prompt template registered in opencode.json. Skills encode REPEATABLE workflows — calculator generation, API scaffolding, chart building.'},
+          {h:'Skill Definition',p:'Each skill has: description (for agent discovery), and prompt (template with {parameters}). The agent auto-discovers skills by reading their descriptions.',code:'"skills": {\n  "create-api": {\n    "description": "Scaffolds REST API endpoints for a resource",\n    "prompt": "Create REST API endpoints for {resource} with CRUD operations. Use Express.js. Include validation and error handling."\n  }\n}'},
+          {h:'Skill Composition',p:'Skills can call other skills. Build complex workflows by composing atomic skills. Example: @build-dashboard calls @create-chart + @fetch-data + @render-layout.'},
+          {h:'Skill Libraries',p:'Organize skills into groups: core-ui, data-vis, api-gen, content. This scales to hundreds of reusable capabilities without bloating the config file.'}
+        ]},
+      { id:4, title:'Project Rules', desc:'Create binding rules that the agent cannot ignore.', lessons:['Rule System','Rule Priority','Rule Templates','Multi-Project Rules'], icon:'📋',
+        detail:[
+          {h:'Rule System',p:'Rules live in .opencode/rules/*.md. They are INJECTED into every prompt automatically. Unlike instructions, rules are project-specific constraints.',code:'# .opencode/rules/frontend-conventions.md\n- Use React functional components only\n- All props must have TypeScript interfaces\n- Use Tailwind CSS exclusively\n- No inline styles allowed'},
+          {h:'Rule Priority',p:'Order: project-wide rules (always loaded) → directory-specific rules (scoped) → task-specific rules (passed inline). All rules compound — the agent sees all of them.'},
+          {h:'Iterative Refinement Cycle',p:'1) Run agent with rules → 2) Review output → 3) Refine rules → 4) Regenerate. This cycle is the core of the algorithmic workflow. Each iteration tightens the constraints.',tip:'The key insight: DON\'T fix bad output manually. Instead, add a rule that prevents that class of errors. The agent learns from rules, not from your edits.'},
+          {h:'Rule Templates',p:'Create reusable rule templates: react-rules.md, api-rules.md, css-rules.md. Copy them into new projects. This enforces organizational standards across all projects.'}
+        ]},
+      { id:5, title:'MCP & Tool Integration', desc:'Connect the agent to real data sources via Model Context Protocol.', lessons:['MCP Architecture','Server Setup','Tool Discovery','Data Pipelines'], icon:'🔌',
+        detail:[
+          {h:'MCP Architecture',p:'OpenCode ↔ MCP Server ↔ Tools (Database, API, File System, Calculator). The agent discovers available tools via their descriptions and decides when to use them.'},
+          {h:'Server Setup',p:'An MCP server is a simple HTTP server that registers tools. Each tool has a name, description, and input schema. The agent reads these to understand tool capabilities.',code:'const server = http.createServer((req, res) => {\n  const { tool, params } = JSON.parse(body);\n  if (tool === "db-reader") {\n    // fetch and return data\n  }\n});'},
+          {h:'Tool Discovery',p:'The agent reads the "description" field of each tool to decide which one fits the current task. Write clear descriptions: "Fetches monthly user growth data from analytics DB" not "Database tool".'},
+          {h:'Data Pipeline Pattern',p:'Agent → MCP:fetchData() → transform → render. This pattern lets you build live dashboards, dynamic reports, and data-driven apps without writing manual data-fetching code.'}
+        ]},
+      { id:6, title:'Custom Agents & Sub-Agents', desc:'Design agent teams with specialized roles that collaborate on complex projects.', lessons:['Agent Architecture','Orchestrator Pattern','Sub-Agent Delegation','Production Workflow'], icon:'🤖',
+        detail:[
+          {h:'Agent Architecture',p:'Define multiple agents in opencode.json, each with role-specific instructions. The orchestrator agent plans work and delegates to specialized sub-agents.',code:'"agents": {\n  "orchestrator": { "instructions": ".opencode/agents/orch.md" },\n  "frontend": { "instructions": ".opencode/agents/frontend.md" },\n  "backend": { "instructions": ".opencode/agents/backend.md" }\n}'},
+          {h:'Orchestrator Pattern',p:'The orchestrator NEVER writes code. It plans, delegates, reviews, and coordinates. This prevents context pollution and keeps each agent focused on its specialty.'},
+          {h:'Sub-Agent Delegation',p:'The orchestrator calls sub-agents via @mentions: @frontend "Build Navbar component". Each sub-agent receives only the relevant context, not the entire project history.'},
+          {h:'Production Workflow',p:'1) Orchestrator plans file tree → 2) Spawns parallel sub-agents → 3) Reviews all outputs → 4) Runs build → 5) Fixes errors → 6) Final review. Scale this to any size project.'}
+        ]}
+    ];
+
+    const PROJECTS = [
+      { id:1, title:'Hello OpenCode', desc:'Install, initialize, and run your first agent interaction. Generate a branded HTML page.', icon:'🌱', difficulty:'beginner', tags:['install','setup','first-agent'], folder:'01-hello-opencode',
+        detail:[
+          {h:'Goal',p:'Install OpenCode, create a project, configure agent instructions, and generate your first page.'},
+          {h:'Files',items:['opencode.json — project config','.opencode/agent-instructions.md — system prompt','.opencode/rules/project-rules.md — coding standards']},
+          {h:'Algorithm',p:'INPUT: user prompt → LOAD: agent-instructions.md + project-rules.md → PROCESS: model generates HTML+CSS → OUTPUT: index.html with AEL branding'},
+          {h:'Commands',code:'npm install -g @opencodeai/cli\nmkdir hello-opencode && cd hello-opencode\nopencode init\nopencode run "Create a dark-themed page with Hello OpenCode in #0074FF"'}
+        ]},
+      { id:2, title:'Landing Page Generator', desc:'Use slash commands and rules to generate professional landing pages on demand.', icon:'🚀', difficulty:'beginner', tags:['slash-commands','rules','landing-page'], folder:'02-landing-page',
+        detail:[
+          {h:'Goal',p:'Define a reusable /build-landing slash command and generate a complete landing page with one prompt.'},
+          {h:'Files',items:['opencode.json — with slashCommands.build-landing','.opencode/rules/landing-rules.md — design constraints','.opencode/agent-instructions.md — specialist persona']},
+          {h:'Algorithm',p:'INPUT: /build-landing product:"X" tone:"Y" → MATCH: slash command template → INJECT: parameters → LOAD: landing rules → GENERATE: 5-section page → OUTPUT: HTML+CSS'},
+          {h:'Commands',code:'opencode run "/build-landing product:\\"AEL Analytics\\" tone:professional"\nopencode run "Add particle animation to the hero section"'}
+        ]},
+      { id:3, title:'Financial Calculator Suite', desc:'Build reusable agent skills for compound interest, depreciation, ROI, and loan amortization.', icon:'📊', difficulty:'intermediate', tags:['skills','composition','finance'], folder:'03-financial-calc',
+        detail:[
+          {h:'Goal',p:'Create 4 financial calculator skills and compose them into a tabbed dashboard.'},
+          {h:'Files',items:['opencode.json — 4 skill definitions + /build-finance-suite command','Each skill: @compound-interest, @depreciation, @roi-calculator, @loan-amortization']},
+          {h:'Algorithm',p:'SKILL: @financial-calc type:"X" params:Y → MATCH: skill template → INJECT: financial parameters → GENERATE: form + JS logic + Chart.js → COMPOSE: into dashboard tabs'},
+          {h:'Commands',code:'opencode run "@compound-interest principal:50000 rate:7 years:15 monthly:500"\nopencode run "/build-finance-suite"'}
+        ]},
+      { id:4, title:'MCP-Powered Dashboard', desc:'Connect OpenCode to live data via MCP server. Build a data-driven dashboard.', icon:'📈', difficulty:'intermediate', tags:['mcp','tools','data','server'], folder:'04-mcp-dashboard',
+        detail:[
+          {h:'Goal',p:'Build an MCP server with db-reader and calculator tools, then have the agent use them to build a live dashboard.'},
+          {h:'Files',items:['opencode.json — mcpServers configuration','mcp-server.js — HTTP server with tool endpoints','.opencode/agent-instructions.md — MCP-aware agent persona']},
+          {h:'Algorithm',p:'AGENT → DISCOVER: mcp tools → CALL: db-reader(users) + db-reader(revenue) → RECEIVE: real data → RENDER: Chart.js dashboard → OUTPUT: live HTML file'},
+          {h:'Commands',code:'node mcp-server.js &\nopencode run "Build a dashboard showing user growth and revenue charts using MCP tools"'}
+        ]},
+      { id:5, title:'Next.js Blog with Sub-Agents', desc:'Build a production-ready blog using an orchestrator agent with 3 specialized sub-agents.', icon:'🧠', difficulty:'advanced', tags:['agents','sub-agents','nextjs','orchestrator'], folder:'05-nextjs-blog',
+        detail:[
+          {h:'Goal',p:'Scaffold and build a complete Next.js 14 blog by delegating work across specialized sub-agents.'},
+          {h:'Files',items:['opencode.json — 4 agent definitions (orchestrator, frontend, backend, content)','.opencode/agents/orchestrator.md — planning & delegation','.opencode/agents/frontend.md — UI components','.opencode/agents/backend.md — API routes','.opencode/agents/content.md — MDX posts']},
+          {h:'Algorithm',p:'ORCHESTRATOR → PLAN: file tree → DELEGATE: @frontend(components) + @backend(API) + @content(posts) → COLLECT: all outputs → REVIEW: TypeScript + build → OUTPUT: production-ready blog'},
+          {h:'Commands',code:'opencode run --agent orchestrator "/build-blog name:\\"AEL Tech Blog\\" theme:dark"\nopencode run "Add search bar filtering posts by title and tags"\nopencode run "Add reading time estimate to each post"'}
+        ]}
+    ];
+
+    const TIMELINE = [
+      'Install & Initialize OpenCode',
+      'Agent Instructions & First Prompt',
+      'Custom Slash Commands & Parameters',
+      'Agent Skills — Reusable Workflows',
+      'Project Rules — Binding Constraints',
+      'MCP — Live Data Integration',
+      'Custom Agents & Orchestrator Pattern',
+      'Production-Ready App with Sub-Agents'
+    ];
+
+    function renderModules() {
+      const grid = document.getElementById('modulesGrid');
+      grid.innerHTML = MODULES.map(m => `
+        <div class="module-card fade-up" data-id="${m.id}">
+          <div class="module-num">Module ${String(m.id).padStart(2,'0')}</div>
+          <h3>${m.icon} ${m.title}</h3>
+          <p>${m.desc}</p>
+          <div class="module-lessons">${m.lessons.map(l => `<span>${l}</span>`).join('')}</div>
+        </div>
+      `).join('');
+      grid.querySelectorAll('.module-card').forEach(c => c.addEventListener('click', () => openLesson(+c.dataset.id)));
+    }
+
+    function openLesson(id) {
+      const mod = MODULES.find(m => m.id === id);
+      if (!mod) return;
+      document.querySelectorAll('.module-card').forEach(c => c.classList.remove('active'));
+      document.querySelector(`.module-card[data-id="${id}"]`).classList.add('active');
+      const el = document.getElementById('lessonDetail');
+      el.className = 'lesson-detail open';
+      el.innerHTML = `<div class="lesson-content fade-up"><h4>${mod.icon} ${mod.title}</h4>${
+        mod.detail.map(s => `<div class="sec"><h5>${s.h}</h5><p>${s.p.replace(/\n/g,'<br>')}</p>${
+          s.code ? `<pre><code>${esc(s.code)}</code></pre>` : ''
+        }${s.tip ? `<div class="tip"><strong>💡 Tip:</strong> ${s.tip}</div>` : ''}</div>`
+      ).join('')}</div>`;
+      el.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = PROJECTS.map(p => `
+        <div class="project-card fade-up" data-id="${p.id}">
+          <span class="picon">${p.icon}</span>
+          <span class="pdifficulty ${p.difficulty === 'advanced' ? 'hard' : p.difficulty === 'intermediate' ? 'medium' : ''}">${p.difficulty}</span>
+          <div class="pnum">Project ${String(p.id).padStart(2,'0')}</div>
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+          <div class="ptags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
+        </div>
+      `).join('');
+      grid.querySelectorAll('.project-card').forEach(c => c.addEventListener('click', () => openProject(+c.dataset.id)));
+    }
+
+    function openProject(id) {
+      const p = PROJECTS.find(x => x.id === id);
+      if (!p) return;
+      document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
+      document.querySelector(`.project-card[data-id="${id}"]`).classList.add('active');
+      const el = document.getElementById('projectDetail');
+      el.className = 'project-detail open';
+      el.innerHTML = `<div class="project-content fade-up"><h4>${p.icon} ${p.title}</h4><p style="color:var(--text-muted);font-size:12px;font-family:var(--font-mono);margin-bottom:16px">📂 projects/${p.folder}/</p>${
+        p.detail.map(s => `<div class="sec"><h5>${s.h}</h5>${
+          s.items ? `<ul>${s.items.map(i => `<li>${i}</li>`).join('')}</ul>` : ''
+        }<p>${s.p ? s.p.replace(/\n/g,'<br>') : ''}</p>${
+          s.code ? `<pre><code>${esc(s.code)}</code></pre>` : ''
+        }</div>`
+      ).join('')}</div>`;
+      el.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+
+    function renderTimeline() {
+      document.getElementById('timeline').innerHTML = `
+        <h3 style="font-size:22px;font-weight:bold;margin-bottom:20px;text-align:center;color:var(--text-primary);font-family:var(--font-mono)">🗺️ Learning Roadmap</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px">
+          ${TIMELINE.map((t,i) => `
+            <div class="glass" style="padding:12px 16px;border-radius:var(--radius-md);display:flex;align-items:center;gap:10px">
+              <span style="width:26px;height:26px;border-radius:50%;background:rgba(0,116,255,.12);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:var(--primary);flex-shrink:0">${i+1}</span>
+              <span style="font-size:12px;color:var(--text-secondary)">${t}</span>
+            </div>
+          `).join('')}
+        </div>`;
+    }
+
+    function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+
+    // Playground
+    const pgEditor = document.getElementById('codeEditor');
+    const pgOutput = document.getElementById('playgroundOutput');
+    const pgDefaults = {
+      opencode: '# OpenCode CLI\n# Try these commands:\ncreate-project nextjs-blog\nadd-rule "Use TypeScript"\nagent-run "Add about page"',
+      rules: '# Project Rules (.opencode/rules/)\nrule: use-typescript\n  Use TypeScript strict mode\n  No "any" type\n\nrule: react-standards\n  Use functional components\n  Every prop needs an interface',
+      mcp: '# MCP Config (opencode.json)\n{\n  "mcpServers": {\n    "my-db": {\n      "command": "node",\n      "args": ["mcp-server.js"]\n    },\n    "filesystem": {\n      "command": "npx",\n      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]\n    }\n  }\n}'
+    };
+    let pgTab = 'opencode';
+    pgEditor.value = pgDefaults.opencode;
+    const pgResponses = {
+      'create-project': '✅ Project created!\n📁 nextjs-blog/\n├── pages/\n├── components/\n└── package.json',
+      'add-rule': '✅ Rule added to .opencode/rules/',
+      'agent-run': '🤖 Agent running...\n✅ Task complete!',
+      'use strict': '⚠️ Warning: TypeScript strict mode enabled',
+      'mcp': '🔌 MCP Server connected!\n📡 Tools: db-reader, file-search, calculator'
+    };
+    document.getElementById('runBtn').addEventListener('click', () => {
+      const c = pgEditor.value.toLowerCase();
+      let matched = false;
+      for (const [k, v] of Object.entries(pgResponses)) {
+        if (c.includes(k)) {
+          pgOutput.innerHTML = `<span style="color:var(--success)">${v.replace(/\n/g, '<br>')}</span>`;
+          matched = true;
+          break;
+        }
+      }
+      if (!matched) pgOutput.innerHTML = '<span style="color:var(--gold)">🤖 Agent processing...<br>✅ Task complete!</span>';
+    });
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      pgEditor.value = '';
+      pgOutput.innerHTML = '<span class="output-placeholder">▶ Run a command to see the result...</span>';
+    });
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      pgEditor.value = pgDefaults[pgTab];
+      pgOutput.innerHTML = '<span class="output-placeholder">▶ Run a command to see the result...</span>';
+    });
+    document.querySelectorAll('.playground-tab').forEach(b => {
+      b.addEventListener('click', () => {
+        pgDefaults[pgTab] = pgEditor.value;
+        document.querySelectorAll('.playground-tab').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        pgTab = b.dataset.pt;
+        pgEditor.value = pgDefaults[pgTab];
+        pgOutput.innerHTML = '<span class="output-placeholder">▶ Run a command to see the result...</span>';
+      });
+    });
+
+    // Nav
+    document.querySelectorAll('.nav-link').forEach(l=>{l.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(l.getAttribute('href'));if(t){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));t.classList.add('active');document.querySelectorAll('.nav-link').forEach(x=>x.classList.remove('active'));l.classList.add('active');document.getElementById('navLinks').classList.remove('open');t.scrollIntoView({behavior:'smooth'})}})});
+    document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+    document.addEventListener('mousemove',e=>{const cg=document.getElementById('cursorGlow');cg.style.opacity='1';cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
+    window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50));
+
+    renderModules(); renderProjects(); renderTimeline();
+    const s=document.createElement('style');
+    s.textContent='.fade-up{animation:fadeUp .5s ease forwards}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.module-card,.project-card{animation:fadeUp .4s ease both}';
+    s.textContent+='.module-card:nth-child(1),.project-card:nth-child(1){animation-delay:0s}.module-card:nth-child(2),.project-card:nth-child(2){animation-delay:.08s}';
+    s.textContent+='.module-card:nth-child(3),.project-card:nth-child(3){animation-delay:.16s}.module-card:nth-child(4),.project-card:nth-child(4){animation-delay:.24s}';
+    s.textContent+='.module-card:nth-child(5),.project-card:nth-child(5){animation-delay:.32s}.module-card:nth-child(6){animation-delay:.4s}';
+    document.head.appendChild(s);
+  </script>
+</body>
+</html>

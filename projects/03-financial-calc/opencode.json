@@ -1,0 +1,32 @@
+{
+  "name": "financial-calculator-suite",
+  "version": "1.0.0",
+  "agent": {
+    "model": "deepseek-v3",
+    "instructions": ".opencode/agent-instructions.md"
+  },
+  "skills": {
+    "compound-interest": {
+      "description": "Builds a compound interest calculator with chart",
+      "prompt": "Create compound interest calculator: inputs (principal, rate 1-20%, years 1-30, monthly contribution). Output: final balance, total interest, yearly table, growth chart. Use #0074FF. Dark theme."
+    },
+    "depreciation": {
+      "description": "Builds a straight-line depreciation calculator",
+      "prompt": "Create depreciation calculator: inputs (asset cost, salvage value, useful life 1-50 years). Output: annual depreciation, yearly book value table, decline chart. Dark theme."
+    },
+    "roi-calculator": {
+      "description": "Builds an ROI calculator with benchmark comparison",
+      "prompt": "Create ROI calculator: inputs (initial investment, final value, holding period years). Output: ROI%, annualized ROI, comparison chart vs 10% benchmark. Dark theme."
+    },
+    "loan-amortization": {
+      "description": "Builds a loan amortization schedule calculator",
+      "prompt": "Create loan amortization calculator: inputs (loan amount, annual rate, term years). Output: monthly payment, total interest, full amortization table, principal vs interest pie chart. Dark theme."
+    }
+  },
+  "slashCommands": {
+    "build-finance-suite": {
+      "description": "Builds the complete financial dashboard with all calculators",
+      "prompt": "Create a financial calculator dashboard with tab navigation. Each tab contains one calculator: Compound Interest, Depreciation, ROI, Loan Amortization. Use @compound-interest, @depreciation, @roi-calculator, @loan-amortization skills. Dark theme with #0074FF. Single HTML file."
+    }
+  }
+}

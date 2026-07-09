@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="50%" stop-color="#050d1a"/>
+      <stop offset="100%" stop-color="#001022"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0074FF" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#0074FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00ffcc" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#00ffcc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0074FF"/>
+      <stop offset="50%" stop-color="#4d9bff"/>
+      <stop offset="100%" stop-color="#0074FF"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0074FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0074FF" stop-opacity=".4"/>
+      <stop offset="100%" stop-color="#0074FF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- Orbs -->
+  <ellipse cx="300" cy="200" rx="400" ry="400" fill="url(#glow1)"/>
+  <ellipse cx="980" cy="500" rx="350" ry="350" fill="url(#glow2)"/>
+
+  <!-- Grid pattern -->
+  <g opacity=".03">
+    <line x1="0" y1="0" x2="1280" y2="0" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="40" x2="1280" y2="40" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="80" x2="1280" y2="80" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="120" x2="1280" y2="120" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="160" x2="1280" y2="160" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="200" x2="1280" y2="200" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="240" x2="1280" y2="240" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="280" x2="1280" y2="280" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="320" x2="1280" y2="320" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="360" x2="1280" y2="360" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="400" x2="1280" y2="400" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="440" x2="1280" y2="440" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="480" x2="1280" y2="480" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="520" x2="1280" y2="520" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="560" x2="1280" y2="560" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="600" x2="1280" y2="600" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="640" x2="1280" y2="640" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="680" x2="1280" y2="680" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="720" x2="1280" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="0" y1="0" x2="0" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="40" y1="0" x2="40" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="80" y1="0" x2="80" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="120" y1="0" x2="120" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="160" y1="0" x2="160" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="200" y1="0" x2="200" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="240" y1="0" x2="240" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="280" y1="0" x2="280" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="320" y1="0" x2="320" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="360" y1="0" x2="360" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="400" y1="0" x2="400" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="440" y1="0" x2="440" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="480" y1="0" x2="480" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="520" y1="0" x2="520" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="560" y1="0" x2="560" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="600" y1="0" x2="600" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="640" y1="0" x2="640" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="680" y1="0" x2="680" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="720" y1="0" x2="720" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="760" y1="0" x2="760" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="800" y1="0" x2="800" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="840" y1="0" x2="840" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="880" y1="0" x2="880" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="920" y1="0" x2="920" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="960" y1="0" x2="960" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1000" y1="0" x2="1000" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1040" y1="0" x2="1040" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1080" y1="0" x2="1080" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1120" y1="0" x2="1120" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1160" y1="0" x2="1160" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1200" y1="0" x2="1200" y2="720" stroke="#0074FF" stroke-width=".5"/>
+    <line x1="1240" y1="0" x2="1240" y2="720" stroke="#0074FF" stroke-width=".5"/>
+  </g>
+
+  <!-- Decorative line -->
+  <rect x="440" y="180" width="400" height="2" rx="1" fill="url(#lineGrad)"/>
+
+  <!-- AEL Logo (small, top left) -->
+  <g transform="translate(80, 60) scale(0.6)">
+    <path d="m97.19,48.59v16.2h-32.4v-16.2c0-8.94-7.25-16.2-16.2-16.2s-16.2,7.25-16.2,16.2v16.2H0v-16.2c0-5.68.98-11.13,2.76-16.2C9.44,13.52,27.44,0,48.59,0s39.16,13.52,45.83,32.4c1.79,5.07,2.76,10.52,2.76,16.2Z" fill="#ffffff"/>
+    <rect y="97.19" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="64.79" y="97.19" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="64.79" y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="129.58" y="97.19" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="161.98" y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="194.38" y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="129.58" y="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="129.58" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="161.98" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="129.58" y="32.4" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="32.4" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="64.79" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="97.19" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="129.58" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="161.98" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+    <rect x="194.38" y="194.38" width="32.4" height="32.4" fill="#0074FF"/>
+  </g>
+
+  <!-- AEL signature -->
+  <text x="170" y="100" font-family="'SF Mono','Fira Code',monospace" font-size="11" font-weight="bold" fill="#9ab3e6" letter-spacing=".5">AYMAN ELMASRY</text>
+  <text x="170" y="116" font-family="'SF Mono','Fira Code',monospace" font-size="9" fill="#64748b" letter-spacing=".5">AEL Digital Studio</text>
+
+  <!-- Title -->
+  <text x="640" y="310" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="58" font-weight="900" fill="url(#titleGrad)" filter="url(#glow)">Learn OpenCode</text>
+
+  <!-- Subtitle -->
+  <rect x="490" y="335" width="300" height="1" rx=".5" fill="url(#lineGrad)"/>
+  <text x="640" y="370" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="22" fill="#9ab3e6" letter-spacing="4">FROM ZERO TO PROFESSIONAL</text>
+
+  <!-- Description -->
+  <text x="640" y="420" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="15" fill="#64748b">
+    <tspan x="640" dy="0">Agentic Coding · MCP · Rules · Custom Agents · Agent Skills</tspan>
+    <tspan x="640" dy="24">Free AI Models — No Paid Subscription Needed</tspan>
+  </text>
+
+  <!-- Badges -->
+  <g transform="translate(640, 500)">
+    <rect x="-120" y="0" width="105" height="32" rx="16" fill="rgba(0,116,255,.12)" stroke="rgba(0,116,255,.3)" stroke-width="1"/>
+    <text x="-67" y="20" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#eef2ff">6 Modules</text>
+
+    <rect x="15" y="0" width="105" height="32" rx="16" fill="rgba(0,116,255,.12)" stroke="rgba(0,116,255,.3)" stroke-width="1"/>
+    <text x="67" y="20" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#eef2ff">17+ Lessons</text>
+  </g>
+
+  <!-- Bottom decorative line -->
+  <rect x="440" y="620" width="400" height="2" rx="1" fill="url(#lineGrad)"/>
+
+  <!-- Footer -->
+  <text x="640" y="660" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="10" fill="#64748b" letter-spacing="1">© 2026 AYMAN ELMASRY — AEL DIGITAL STUDIO</text>
+  <text x="640" y="680" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace" font-size="9" fill="#4a5568" letter-spacing="1">BUILT WITH ❤️ AND VANILLA JAVASCRIPT</text>
+
+  <!-- Corner accents -->
+  <rect x="50" y="50" width="30" height="3" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="50" y="50" width="3" height="30" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="1200" y="50" width="30" height="3" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="1227" y="50" width="3" height="30" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="50" y="667" width="30" height="3" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="50" y="640" width="3" height="30" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="1200" y="667" width="30" height="3" rx="1.5" fill="#0074FF" opacity=".5"/>
+  <rect x="1227" y="640" width="3" height="30" rx="1.5" fill="#0074FF" opacity=".5"/>
+</svg>

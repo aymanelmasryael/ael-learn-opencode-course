@@ -1,0 +1,35 @@
+{
+  "name": "ael-nextjs-blog",
+  "version": "1.0.0",
+  "agent": {
+    "default": "orchestrator",
+    "model": "gemini-2.0-flash"
+  },
+  "agents": {
+    "orchestrator": {
+      "description": "Senior full-stack architect. Plans, delegates, and reviews.",
+      "instructions": ".opencode/agents/orchestrator.md"
+    },
+    "frontend-dev": {
+      "description": "UI/UX specialist. Builds React/Tailwind components.",
+      "instructions": ".opencode/agents/frontend.md"
+    },
+    "backend-dev": {
+      "description": "API specialist. Builds routes, DB schemas, and middleware.",
+      "instructions": ".opencode/agents/backend.md"
+    },
+    "content-writer": {
+      "description": "Creates MDX blog posts with rich frontmatter.",
+      "instructions": ".opencode/agents/content.md"
+    }
+  },
+  "slashCommands": {
+    "build-blog": {
+      "description": "Scaffold and build a complete Next.js blog",
+      "prompt": "Build a production-ready Next.js 14 blog called {name} with {theme} theme. Use app router, TypeScript, Tailwind CSS. Delegate work to sub-agents."
+    }
+  },
+  "rules": {
+    "directories": [".opencode/rules/"]
+  }
+}

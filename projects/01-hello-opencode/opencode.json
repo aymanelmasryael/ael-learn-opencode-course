@@ -1,0 +1,11 @@
+{
+  "name": "hello-opencode",
+  "version": "1.0.0",
+  "agent": {
+    "model": "gemini-2.0-flash",
+    "instructions": ".opencode/agent-instructions.md"
+  },
+  "rules": {
+    "directories": [".opencode/rules/"]
+  }
+}

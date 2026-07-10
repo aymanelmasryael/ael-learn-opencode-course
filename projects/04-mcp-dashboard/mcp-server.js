@@ -74,6 +74,4 @@ const server = http.createServer((req, res) => {
 
 const PORT = 3001;
 server.listen(PORT, () => {
-  console.log(`AEL MCP Server running on port ${PORT}`);
-  console.log('Available tools: db-reader, calculate');
 });

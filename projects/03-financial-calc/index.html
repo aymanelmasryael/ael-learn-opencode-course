@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Calculator Suite — AEL Studio</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root { --primary: #0074FF; --bg: #000; --bg-card: rgba(5,12,24,.7); --text: #eef2ff; --text-secondary: #9ab3e6; --border: rgba(0,116,255,.25); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { text-align: center; font-size: 36px; margin-bottom: 8px; }
+    h1 span { background: linear-gradient(135deg, var(--primary), #4d9bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 32px; font-size: 14px; }
+    .tabs { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tab { padding: 10px 20px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 12px; cursor: pointer; transition: all .2s; }
+    .tab:hover, .tab.active { background: rgba(0,116,255,.1); border-color: var(--primary); color: var(--text); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    .input-group label { display: block; font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+    .input-group input, .input-group select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: rgba(0,0,0,.3); color: var(--text); font-size: 14px; }
+    .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+    .result-card { background: rgba(0,116,255,.06); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+    .result-card .value { font-size: 24px; font-weight: bold; color: var(--primary); }
+    .result-card .label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+    .chart-container { max-height: 300px; margin-top: 16px; }
+    @media (max-width: 768px) { .inputs { grid-template-columns: 1fr; } .results { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span>Financial</span> Calculator Suite</h1>
+    <p class="subtitle">Compound Interest · Depreciation · ROI · Loan Amortization</p>
+    <div class="tabs">
+      <button class="tab active" data-tab="compound">Compound Interest</button>
+      <button class="tab" data-tab="depreciation">Depreciation</button>
+      <button class="tab" data-tab="roi">ROI</button>
+      <button class="tab" data-tab="loan">Loan Amortization</button>
+    </div>
+    <div id="compound" class="tab-content active"><div class="calc-card"><h3 style="margin-bottom:16px">Compound Interest Calculator</h3><div class="inputs"><div class="input-group"><label>Principal ($)</label><input type="number" id="ci-principal" value="10000"></div><div class="input-group"><label>Annual Rate (%)</label><input type="range" id="ci-rate" min="1" max="20" value="7" step="0.5"><span id="ci-rate-val">7%</span></div><div class="input-group"><label>Years</label><input type="range" id="ci-years" min="1" max="30" value="10"><span id="ci-years-val">10</span></div><div class="input-group"><label>Monthly Contribution ($)</label><input type="number" id="ci-monthly" value="500"></div></div><div class="results"><div class="result-card"><div class="value" id="ci-balance">$0</div><div class="label">Final Balance</div></div><div class="result-card"><div class="value" id="ci-interest">$0</div><div class="label">Total Interest</div></div><div class="result-card"><div class="value" id="ci-contrib">$0</div><div class="label">Total Contributions</div></div></div><div class="chart-container"><canvas id="ci-chart"></canvas></div></div></div>
+    <div id="depreciation" class="tab-content"><div class="calc-card"><h3 style="margin-bottom:16px">Depreciation Calculator</h3><div class="inputs"><div class="input-group"><label>Asset Cost ($)</label><input type="number" id="dep-cost" value="50000"></div><div class="input-group"><label>Salvage Value ($)</label><input type="number" id="dep-salvage" value="5000"></div><div class="input-group"><label>Useful Life (years)</label><input type="range" id="dep-life" min="1" max="50" value="10"><span id="dep-life-val">10</span></div></div><div class="results"><div class="result-card"><div class="value" id="dep-annual">$0</div><div class="label">Annual Depreciation</div></div><div class="result-card"><div class="value" id="dep-total">$0</div><div class="label">Total Depreciation</div></div></div><div class="chart-container"><canvas id="dep-chart"></canvas></div></div></div>
+    <div id="roi" class="tab-content"><div class="calc-card"><h3 style="margin-bottom:16px">ROI Calculator</h3><div class="inputs"><div class="input-group"><label>Initial Investment ($)</label><input type="number" id="roi-initial" value="50000"></div><div class="input-group"><label>Final Value ($)</label><input type="number" id="roi-final" value="85000"></div><div class="input-group"><label>Holding Period (years)</label><input type="range" id="roi-years" min="1" max="30" value="5"><span id="roi-years-val">5</span></div></div><div class="results"><div class="result-card"><div class="value" id="roi-pct">0%</div><div class="label">ROI</div></div><div class="result-card"><div class="value" id="roi-annual">0%</div><div class="label">Annualized ROI</div></div></div><div class="chart-container"><canvas id="roi-chart"></canvas></div></div></div>
+    <div id="loan" class="tab-content"><div class="calc-card"><h3 style="margin-bottom:16px">Loan Amortization</h3><div class="inputs"><div class="input-group"><label>Loan Amount ($)</label><input type="number" id="loan-amount" value="300000"></div><div class="input-group"><label>Annual Rate (%)</label><input type="range" id="loan-rate" min="1" max="20" value="6" step="0.5"><span id="loan-rate-val">6%</span></div><div class="input-group"><label>Term (years)</label><input type="range" id="loan-term" min="1" max="30" value="30"><span id="loan-term-val">30</span></div></div><div class="results"><div class="result-card"><div class="value" id="loan-payment">$0</div><div class="label">Monthly Payment</div></div><div class="result-card"><div class="value" id="loan-total-interest">$0</div><div class="label">Total Interest</div></div><div class="result-card"><div class="value" id="loan-total">$0</div><div class="label">Total Paid</div></div></div><div class="chart-container"><canvas id="loan-chart"></canvas></div></div></div>
+  </div>
+  <script>
+    function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+    function fmtPct(n) { return n.toFixed(2) + '%'; }
+
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById(t.dataset.tab).classList.add('active');
+    }));
+
+    // Compound Interest
+    function calcCI() {
+      const P = +document.getElementById('ci-principal').value;
+      const r = +document.getElementById('ci-rate').value / 100;
+      const years = +document.getElementById('ci-years').value;
+      const PMT = +document.getElementById('ci-monthly').value;
+      const n = 12;
+      const totalMonths = years * n;
+      const rate = r / n;
+      let balance = P;
+      for (let i = 0; i < totalMonths; i++) { balance = balance * (1 + rate) + PMT; }
+      const totalContrib = P + PMT * totalMonths;
+      document.getElementById('ci-balance').textContent = fmt(balance);
+      document.getElementById('ci-interest').textContent = fmt(balance - totalContrib);
+      document.getElementById('ci-contrib').textContent = fmt(totalContrib);
+    }
+    document.getElementById('ci-rate').addEventListener('input', function() { document.getElementById('ci-rate-val').textContent = this.value + '%'; calcCI(); });
+    document.getElementById('ci-years').addEventListener('input', function() { document.getElementById('ci-years-val').textContent = this.value; calcCI(); });
+    document.getElementById('ci-principal').addEventListener('input', calcCI);
+    document.getElementById('ci-monthly').addEventListener('input', calcCI);
+    calcCI();
+
+    // Depreciation
+    function calcDep() {
+      const cost = +document.getElementById('dep-cost').value;
+      const salvage = +document.getElementById('dep-salvage').value;
+      const life = +document.getElementById('dep-life').value;
+      const annual = (cost - salvage) / life;
+      document.getElementById('dep-annual').textContent = fmt(annual);
+      document.getElementById('dep-total').textContent = fmt(annual * life);
+    }
+    document.getElementById('dep-life').addEventListener('input', function() { document.getElementById('dep-life-val').textContent = this.value; calcDep(); });
+    document.getElementById('dep-cost').addEventListener('input', calcDep);
+    document.getElementById('dep-salvage').addEventListener('input', calcDep);
+    calcDep();
+
+    // ROI
+    function calcROI() {
+      const initial = +document.getElementById('roi-initial').value;
+      const final = +document.getElementById('roi-final').value;
+      const years = +document.getElementById('roi-years').value;
+      const roi = ((final - initial) / initial) * 100;
+      const annual = ((Math.pow(final / initial, 1 / years)) - 1) * 100;
+      document.getElementById('roi-pct').textContent = fmtPct(roi);
+      document.getElementById('roi-annual').textContent = fmtPct(annual);
+    }
+    document.getElementById('roi-years').addEventListener('input', function() { document.getElementById('roi-years-val').textContent = this.value; calcROI(); });
+    document.getElementById('roi-initial').addEventListener('input', calcROI);
+    document.getElementById('roi-final').addEventListener('input', calcROI);
+    calcROI();
+
+    // Loan
+    function calcLoan() {
+      const P = +document.getElementById('loan-amount').value;
+      const r = +document.getElementById('loan-rate').value / 100 / 12;
+      const n = +document.getElementById('loan-term').value * 12;
+      const payment = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      const totalPaid = payment * n;
+      document.getElementById('loan-payment').textContent = fmt(payment);
+      document.getElementById('loan-total-interest').textContent = fmt(totalPaid - P);
+      document.getElementById('loan-total').textContent = fmt(totalPaid);
+    }
+    document.getElementById('loan-rate').addEventListener('input', function() { document.getElementById('loan-rate-val').textContent = this.value + '%'; calcLoan(); });
+    document.getElementById('loan-term').addEventListener('input', function() { document.getElementById('loan-term-val').textContent = this.value; calcLoan(); });
+    document.getElementById('loan-amount').addEventListener('input', calcLoan);
+    calcLoan();
+  </script>
+</body>
+</html>

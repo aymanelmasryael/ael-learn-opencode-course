@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Dashboard — AEL Studio</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root { --primary: #0074FF; --bg: #000; --bg-card: rgba(5,12,24,.7); --text: #eef2ff; --text-secondary: #9ab3e6; --border: rgba(0,116,255,.25); --success: #10b981; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .header h1 { font-size: 28px; }
+    .header h1 span { background: linear-gradient(135deg, var(--primary), #4d9bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .badge { display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.2); font-size: 11px; color: var(--success); font-family: 'SF Mono', monospace; }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .summary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .summary-card .label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+    .summary-card .value { font-size: 32px; font-weight: bold; }
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .chart-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .chart-card h3 { font-size: 14px; margin-bottom: 16px; color: var(--text-secondary); }
+    .chart-card canvas { max-height: 300px; }
+    .footer { text-align: center; margin-top: 32px; font-size: 11px; color: #64748b; font-family: 'SF Mono', monospace; }
+    @media (max-width: 768px) { .summary { grid-template-columns: 1fr; } .charts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><span>MCP</span> Dashboard</h1>
+      <div class="badge"><span class="badge-dot"></span> MCP Connected</div>
+    </div>
+    <div class="summary">
+      <div class="summary-card"><div class="label">Total Users</div><div class="value" id="total-users" style="color:var(--primary)">—</div></div>
+      <div class="summary-card"><div class="label">Total Revenue</div><div class="value" id="total-revenue" style="color:var(--primary)">—</div></div>
+      <div class="summary-card"><div class="label">Avg Monthly Growth</div><div class="value" id="avg-growth" style="color:var(--primary)">—</div></div>
+    </div>
+    <div class="charts">
+      <div class="chart-card"><h3>📈 User Growth</h3><canvas id="users-chart"></canvas></div>
+      <div class="chart-card"><h3>📊 Monthly Revenue</h3><canvas id="revenue-chart"></canvas></div>
+    </div>
+    <div class="footer">Data fetched via MCP db-reader tool · Last updated: <span id="timestamp"></span></div>
+  </div>
+  <script>
+    // Simulated MCP db-reader responses
+    const usersData = [
+      { month: 'Jan', count: 1200 }, { month: 'Feb', count: 1450 },
+      { month: 'Mar', count: 1820 }, { month: 'Apr', count: 2100 },
+      { month: 'May', count: 2560 }, { month: 'Jun', count: 3100 }
+    ];
+    const revenueData = [
+      { month: 'Jan', amount: 45000 }, { month: 'Feb', amount: 52000 },
+      { month: 'Mar', amount: 61000 }, { month: 'Apr', amount: 74000 },
+      { month: 'May', amount: 88000 }, { month: 'Jun', amount: 102000 }
+    ];
+
+    const totalUsers = usersData.reduce((s, d) => s + d.count, 0);
+    const totalRevenue = revenueData.reduce((s, d) => s + d.amount, 0);
+    const growthRates = usersData.slice(1).map((d, i) => ((d.count - usersData[i].count) / usersData[i].count) * 100);
+    const avgGrowth = growthRates.reduce((s, v) => s + v, 0) / growthRates.length;
+
+    document.getElementById('total-users').textContent = totalUsers.toLocaleString();
+    document.getElementById('total-revenue').textContent = '$' + totalRevenue.toLocaleString();
+    document.getElementById('avg-growth').textContent = '+' + avgGrowth.toFixed(1) + '%';
+    document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+    const months = usersData.map(d => d.month);
+    const userCounts = usersData.map(d => d.count);
+    const revenues = revenueData.map(d => d.amount);
+
+    new Chart(document.getElementById('users-chart'), {
+      type: 'line', data: {
+        labels: months,
+        datasets: [{
+          label: 'Users', data: userCounts, borderColor: '#0074FF',
+          backgroundColor: (ctx) => {
+            const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, 300);
+            g.addColorStop(0, 'rgba(0,116,255,.3)'); g.addColorStop(1, 'rgba(0,116,255,0)');
+            return g;
+          }, fill: true, tension: .4, pointBackgroundColor: '#0074FF'
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { x: { ticks: { color: '#64748b' }, grid: { color: 'rgba(0,116,255,.06)' } },
+                 y: { ticks: { color: '#64748b' }, grid: { color: 'rgba(0,116,255,.06)' } } } }
+    });
+
+    new Chart(document.getElementById('revenue-chart'), {
+      type: 'bar', data: {
+        labels: months,
+        datasets: [{ label: 'Revenue', data: revenues, backgroundColor: 'rgba(0,116,255,.7)', borderRadius: 4 }]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { x: { ticks: { color: '#64748b' }, grid: { color: 'rgba(0,116,255,.06)' } },
+                 y: { ticks: { color: '#64748b' }, grid: { color: 'rgba(0,116,255,.06)' },
+                      ticks: { callback: v => '$' + v.toLocaleString() } } } }
+    });
+  </script>
+</body>
+</html>

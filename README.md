@@ -3,7 +3,7 @@
 **Owner / Author:** Ayman Elmasry  
 **Studio:** AEL Digital Studio  
 **Website:** [aymanelmasry.com](https://aymanelmasry.com)  
-**GitHub:** [github.com/aymanelmasryael/learn-opencode-course](https://github.com/aymanelmasryael/learn-opencode-course)  
+**GitHub:** [github.com/aymanelmasryael/ael-learn-opencode-course](https://github.com/aymanelmasryael/ael-learn-opencode-course)  
 **Date:** July 2026  
 **License:** MIT — Free for personal and commercial use
 

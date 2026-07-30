@@ -9,6 +9,17 @@
 
 ---
 
+## 📚 Learning Metadata
+
+| | |
+|---|---|
+| **Learning Level** | Beginner to Advanced |
+| **Estimated Duration** | 6 modules with 24 lessons, 5 projects |
+| **Prerequisites** | Basic command line familiarity, text editor |
+| **Learning Outcomes** | After completing this course you will be able to master OpenCode agentic coding, MCP protocol, custom agents, and project rules |
+
+---
+
 ## Overview
 
 This interactive course teaches **OpenCode** from scratch to professional level. The content is delivered in a single HTML/CSS/JS page designed with the official **AEL Digital Studio** brand identity:

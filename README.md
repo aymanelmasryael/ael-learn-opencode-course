@@ -103,6 +103,13 @@ Font Sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui
 
 Open `learn-opencode-course.html` in any modern browser. No build tools or dependencies required.
 
+## 🔗 Related Resources
+
+- [AEL Learning Catalog](https://github.com/aymanelmasryael/ael-learning-catalog) — Central entry point to all AEL courses
+- [Learn GitHub](https://github.com/aymanelmasryael/ael-learn-github-course) — Master Git, GitHub workflows, CI/CD, and open source contribution
+- [Engineering Academy](https://github.com/aymanelmasryael/ael-engineering-academy) — Complete LLM engineering platform from zero to production
+- [Terminal Reference](https://github.com/aymanelmasryael/ael-terminal-engineering-reference-2026) — 220+ terminal commands across 20 categories
+
 ---
 
 *© 2026 AEL Digital Studio. MIT License — Free for personal and commercial use.*  

@@ -46,7 +46,7 @@ This interactive course teaches **OpenCode** from scratch to professional level.
 
 ```bash
 # Open the course in your browser
-open learn-opencode-course.html
+open index.html
 
 # Or explore the project files
 ls projects/
@@ -56,8 +56,8 @@ ls projects/
 
 ```
 learn-opencode-course/
-├── learn-opencode-course.html    # Interactive course page (HTML + CSS + JS)
-├── learn-opencode-course-info.md # This documentation file
+├── index.html                    # Interactive course page (HTML + CSS + JS)
+├── opencodeai-docs.md            # OpenCode documentation reference
 ├── cover.svg                     # Course preview / social card
 └── projects/
     ├── 01-hello-opencode/        # Project 1: Hello OpenCode
@@ -94,5 +94,5 @@ Open `learn-opencode-course.html` in any modern browser. No build tools or depen
 
 ---
 
-*© 2026 Ayman Elmasry — AEL Digital Studio. All rights reserved.*  
+*© 2026 AEL Digital Studio. MIT License — Free for personal and commercial use.*  
 *Built with vanilla JavaScript*

@@ -1,7 +1,7 @@
 :root { --primary: #0074FF; --bg: #000; --bg-card: rgba(5,12,24,.7); --text: #eef2ff; --text-secondary: #9ab3e6; --border: rgba(0,116,255,.25); }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 .navbar { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; border-radius: 60px; background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); width: calc(100% - 32px); max-width: 1000px; z-index: 1000; }
 .nav-brand { font-weight: bold; font-size: 14px; }
 .nav-links { display: flex; gap: 20px; align-items: center; }
